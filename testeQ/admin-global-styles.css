@@ -1,0 +1,133 @@
+/* Estilos globais para todas as páginas do admin */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, rgba(16, 147, 73, 0.15) 0%, rgba(16, 147, 73, 0.15) 33%, rgba(255, 255, 255, 0.15) 33%, rgba(255, 255, 255, 0.15) 66%, rgba(221, 1, 1, 0.15) 66%, rgba(221, 1, 1, 0.15) 100%) !important;
+    background-color: #f5f5f5 !important;
+    color: #2c3e50;
+    display: flex;
+    min-height: 100vh;
+}
+
+body.theme-alemanha {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 33%, rgba(221, 1, 0, 0.15) 33%, rgba(221, 1, 0, 0.15) 66%, rgba(255, 206, 0, 0.15) 66%, rgba(255, 206, 0, 0.15) 100%) !important;
+    background-color: #1a1a1a !important;
+}
+
+.content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 30px;
+    transition: margin-left 0.3s;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #109349 0%, #109349 33%, #FFFFFF 33%, #FFFFFF 66%, #DD0101 66%, #DD0101 100%) !important;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(16, 147, 73, 0.2);
+    border: 2px solid #109349;
+}
+
+.theme-alemanha .page-header {
+    background: linear-gradient(135deg, #000000 0%, #000000 33%, #DD0100 33%, #DD0100 66%, #FFCE00 66%, #FFCE00 100%) !important;
+    border: 2px solid #FFCE00;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.page-header p {
+    opacity: 1;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+}
+
+.mobile-welcome-text {
+    display: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        padding: 70px 15px 15px;
+    }
+    
+    .page-header {
+        background-image: url('bem-vindo-italia-responsivo.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        padding: 15px 12px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        text-align: right;
+        position: relative;
+    }
+    
+    .theme-alemanha .page-header {
+        background-image: url('bem-vindo-alemanha-responsivo.jpg') !important;
+        background-position: left center !important;
+    }
+    
+    .page-header h1,
+    .page-header p {
+        display: none !important;
+    }
+    
+    .mobile-welcome-text {
+        display: flex;
+        position: absolute;
+        top: 65px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.9);
+        color: #109349;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        z-index: 10;
+        white-space: nowrap;
+    }
+    
+    .theme-alemanha .mobile-welcome-text {
+        background: rgba(0, 0, 0, 0.8);
+        color: #EFC202;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 15px;
+        min-height: 180px;
+    }
+    
+    .mobile-welcome-text {
+        top: 35px;
+    }
+}

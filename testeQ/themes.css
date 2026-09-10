@@ -1,0 +1,481 @@
+/* Sistema de Temas Simples - Edite as cores facilmente */
+
+/* TEMA PADRÃO */
+body {
+    background-color: #f8fafc;
+    color: #1f2937;
+}
+
+.sidebar {
+    background-color: #4f46e5;
+}
+
+.card, .stat-card, .table-container, .modal-content {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+}
+
+.btn, .btn-primary {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #3730a3;
+}
+
+/* TEMA ALEMANHA - Cores da Bandeira: Preto, Vermelho, Amarelo */
+.theme-alemanha body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.theme-alemanha .sidebar {
+    background-color: #000000;
+    box-shadow: 4px 0 15px rgba(255, 206, 0, 0.3);
+}
+
+.theme-alemanha .card, 
+.theme-alemanha .stat-card, 
+.theme-alemanha .table-container, 
+.theme-alemanha .modal-content,
+.theme-alemanha .relatorio-item {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(255, 206, 0, 0.2);
+}
+
+.theme-alemanha .btn, 
+.theme-alemanha .btn-primary,
+.theme-alemanha .welcome-actions .btn {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.theme-alemanha .btn:hover,
+.theme-alemanha .welcome-actions .btn:hover {
+    background-color: #333333;
+}
+
+.theme-alemanha .card-header,
+.theme-alemanha .relatorio-header {
+    background: linear-gradient(135deg, #FFCE00, #e6b800);
+    color: #000000;
+}
+
+.theme-alemanha .card-body,
+.theme-alemanha .relatorio-body {
+    background: #1a1a1a;
+}
+
+.theme-alemanha .menu-item:hover, 
+.theme-alemanha .menu-item.active {
+    background-color: rgba(255, 206, 0, 0.1);
+    border-left: 4px solid #FFCE00;
+}
+
+.theme-alemanha .dashboard-welcome {
+    background: linear-gradient(135deg, #000000 0%, #000000 33%, #DD0100 33%, #DD0100 66%, #FFCE00 66%, #FFCE00 100%) !important;
+    color: white !important;
+    border: 2px solid #FFCE00 !important;
+    animation: none !important;
+    background-attachment: scroll !important;
+    transform: none !important;
+    transition: none !important;
+    position: static !important;
+    overflow: visible !important;
+    background-size: auto !important;
+}
+
+.theme-alemanha .veiculo-info,
+.theme-alemanha .problema-info,
+.theme-alemanha .diagnostico-info,
+.theme-alemanha .servico-item {
+    background: #2a2a2a;
+    border-left-color: #FFCE00;
+}
+
+/* Estilos adicionais para garantir que os status funcionem */
+body.theme-alemanha div[style*="background: #d1ecf1"] {
+    background: #2a2a2a !important;
+    border: 2px solid #FFCE00 !important;
+}
+
+body.theme-alemanha div[style*="background: #f8d7da"] {
+    background: #2a2a2a !important;
+    border: 2px solid #DD0100 !important;
+}
+
+body.theme-alemanha div[style*="background: #fff3cd"] {
+    background: #2a2a2a !important;
+    border: 2px solid #FFCE00 !important;
+}
+
+body.theme-alemanha div[style*="background: #d4edda"] {
+    background: #2a2a2a !important;
+    border: 2px solid #FFCE00 !important;
+}
+
+.theme-alemanha .profile-avatar {
+    background-color: #000000;
+}
+
+.theme-alemanha .badge {
+    background-color: #FFCE00;
+    color: #000000;
+}
+
+.theme-alemanha .form-group input,
+.theme-alemanha .form-group select,
+.theme-alemanha .form-group textarea,
+.theme-alemanha .form-control {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-color: #444;
+}
+
+.theme-alemanha .form-group input:focus,
+.theme-alemanha .form-group select:focus,
+.theme-alemanha .form-group textarea:focus,
+.theme-alemanha .form-control:focus {
+    border-color: #FFCE00;
+    box-shadow: 0 0 0 2px rgba(255, 206, 0, 0.2);
+}
+
+.theme-alemanha .alert {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-left-color: #FFCE00;
+}
+
+/* Cores de texto específicas para o tema alemanha */
+body.theme-alemanha div[style*="color: var(--success-color)"] p,
+body.theme-alemanha p[style*="color: var(--success-color)"] {
+    color: #FFCE00 !important;
+}
+
+body.theme-alemanha div[style*="color: var(--error-color)"] p,
+body.theme-alemanha p[style*="color: var(--error-color)"] {
+    color: #DD0100 !important;
+}
+
+body.theme-alemanha div[style*="color: var(--warning-color)"] p,
+body.theme-alemanha p[style*="color: var(--warning-color)"] {
+    color: #FFCE00 !important;
+}
+
+body.theme-alemanha div[style*="color: #666"] p,
+body.theme-alemanha p[style*="color: #666"] {
+    color: #cccccc !important;
+}
+
+body.theme-alemanha div[style*="color: #721c24"] p,
+body.theme-alemanha p[style*="color: #721c24"],
+body.theme-alemanha small[style*="color: #721c24"] {
+    color: #DD0100 !important;
+}
+
+body.theme-alemanha div[style*="color: #856404"] p,
+body.theme-alemanha p[style*="color: #856404"] {
+    color: #cccccc !important;
+}
+
+.theme-alemanha .login-container {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.theme-alemanha .login-header {
+    background-color: #000000;
+}
+
+.theme-alemanha .password-toggle:hover {
+    color: #FFCE00 !important;
+}
+
+/* Correção para about-content no tema alemanha */
+.theme-alemanha .about-text h3 {
+    color: #ffffff !important;
+}
+
+.theme-alemanha .about-text p {
+    color: #cccccc !important;
+}
+
+.theme-alemanha .feature-list li {
+    color: #ffffff !important;
+}
+
+/* Correção para seção de feedback no tema alemanha */
+.theme-alemanha .feedback-section {
+    background-color: #1a1a1a !important;
+}
+
+.theme-alemanha .feedback-section .section-title h2 {
+    color: #ffffff !important;
+}
+
+.theme-alemanha .feedback-section .section-title p {
+    color: #cccccc !important;
+}
+
+.theme-alemanha .feedback-section > div > div {
+    background: #2a2a2a !important;
+    box-shadow: 0 8px 25px rgba(255, 206, 0, 0.2) !important;
+}
+
+.theme-alemanha .feedback-section .form-group label {
+    color: #FFCE00 !important;
+}
+
+.theme-alemanha .feedback-section .form-group input,
+.theme-alemanha .feedback-section .form-group select,
+.theme-alemanha .feedback-section .form-group textarea {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    border-color: #444 !important;
+}
+
+.theme-alemanha .feedback-section .form-group input:focus,
+.theme-alemanha .feedback-section .form-group select:focus,
+.theme-alemanha .feedback-section .form-group textarea:focus {
+    border-color: #FFCE00 !important;
+    box-shadow: 0 0 0 3px rgba(255, 206, 0, 0.1) !important;
+}
+
+/* Estilos específicos para páginas de login no tema alemanha */
+.theme-alemanha .login-container {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 2px solid #FFCE00;
+}
+
+.theme-alemanha .login-header {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.theme-alemanha .login-form {
+    background-color: #1a1a1a;
+}
+
+.theme-alemanha .form-container {
+    background-color: #1a1a1a;
+}
+
+.theme-alemanha .container {
+    background-color: #1a1a1a;
+    border: 2px solid #FFCE00;
+}
+
+.theme-alemanha .header {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.theme-alemanha .btn {
+    background-color: #FFCE00;
+    color: #000000;
+}
+
+.theme-alemanha .btn:hover {
+    background-color: #e6b800;
+    color: #000000;
+}
+
+.theme-alemanha .login-footer a {
+    color: #FFCE00;
+}
+
+.theme-alemanha .login-footer a:hover {
+    color: #e6b800;
+}
+
+/* Estilos específicos para status dos relatórios no tema Alemanha */
+body.theme-alemanha .status-realizado {
+    background: #2a2a2a !important;
+    border: 2px solid #FFCE00 !important;
+}
+
+body.theme-alemanha .status-realizado p {
+    color: #FFCE00 !important;
+}
+
+body.theme-alemanha .status-realizado p:last-child {
+    color: #cccccc !important;
+}
+
+body.theme-alemanha .status-rejeitado {
+    background: #2a2a2a !important;
+    border: 2px solid #DD0100 !important;
+}
+
+body.theme-alemanha .status-rejeitado p {
+    color: #DD0100 !important;
+}
+
+body.theme-alemanha .status-solicitou-mudanca {
+    background: #2a2a2a !important;
+    border: 2px solid #FFCE00 !important;
+}
+
+body.theme-alemanha .status-solicitou-mudanca p {
+    color: #FFCE00 !important;
+}
+
+body.theme-alemanha .status-cancelado {
+    background: #2a2a2a !important;
+    border: 2px solid #DD0100 !important;
+}
+
+body.theme-alemanha .status-cancelado p {
+    color: #DD0100 !important;
+}
+
+body.theme-alemanha .status-nao-cancelavel {
+    background: #2a2a2a !important;
+    border: 2px solid #DD0100 !important;
+}
+
+body.theme-alemanha .status-nao-cancelavel small {
+    color: #DD0100 !important;
+}
+
+body.theme-alemanha .status-aguardando {
+    background: #2a2a2a !important;
+    border-left: 4px solid #FFCE00 !important;
+}
+
+body.theme-alemanha .status-aguardando h4 {
+    color: #FFCE00 !important;
+}
+
+body.theme-alemanha .status-aguardando p {
+    color: #cccccc !important;
+}
+
+body.theme-alemanha .status-aceito {
+    background: #2a2a2a !important;
+    border: 2px solid #FFCE00 !important;
+}
+
+body.theme-alemanha .status-aceito p {
+    color: #FFCE00 !important;
+}
+
+/* Dashboard welcome para tema padrão (Itália) - SEM ANIMAÇÃO */
+.dashboard-welcome {
+    background: linear-gradient(135deg, #109349 0%, #109349 33%, #ffffff 33%, #ffffff 66%, #DD0100 66%, #DD0100 100%) !important;
+    color: white !important;
+    border: 2px solid #109349 !important;
+    animation: none !important;
+    background-attachment: scroll !important;
+    transform: none !important;
+    transition: none !important;
+    position: static !important;
+    overflow: visible !important;
+    background-size: auto !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    margin-bottom: 30px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dashboard-welcome::before {
+    display: none !important;
+}
+
+.dashboard-welcome::after {
+    display: none !important;
+}
+
+.dashboard-welcome * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+}
+
+.theme-alemanha .dashboard-welcome::before {
+    display: none !important;
+}
+
+.theme-alemanha .dashboard-welcome::after {
+    display: none !important;
+}
+
+.theme-alemanha .dashboard-welcome * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+}
+
+/* TEMA ALEMÃO */
+.theme-german body {
+    background-color: #1f2937;
+    color: #f9fafb;
+}
+
+.theme-german .sidebar {
+    background-color: #111827;
+}
+
+.theme-german .card, 
+.theme-german .stat-card, 
+.theme-german .table-container, 
+.theme-german .modal-content {
+    background-color: #374151;
+    border: 1px solid #4b5563;
+    color: #f9fafb;
+}
+
+.theme-german .btn, 
+.theme-german .btn-primary {
+    background-color: #dc2626;
+    color: white;
+}
+
+.theme-german .btn:hover {
+    background-color: #b91c1c;
+}
+
+.theme-german .card-header {
+    background-color: #dc2626;
+    color: white;
+}
+
+.theme-german .menu-item:hover, 
+.theme-german .menu-item.active {
+    background-color: rgba(251, 191, 36, 0.1);
+    border-left: 4px solid #fbbf24;
+}
+
+.theme-german .form-group input,
+.theme-german .form-group select,
+.theme-german .form-group textarea {
+    background-color: #4b5563;
+    color: #f9fafb;
+    border-color: #6b7280;
+}
+
+/* Botão de mudança de tema - estilos movidos para components/theme-toggle.php */
+
+/* Transições suaves */
+body, .sidebar, .card, .btn {
+    transition: all 0.3s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .theme-toggle {
+        top: 16px;
+        right: 16px;
+        padding: 12px;
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+    }
+}

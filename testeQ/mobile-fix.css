@@ -1,0 +1,177 @@
+/* CSS MOBILE FIX - FORÇA RESPONSIVIDADE */
+
+/* FORÇA MOBILE LAYOUT */
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden !important;
+    }
+    
+    .sidebar {
+        transform: translateX(-100%) !important;
+        width: 280px !important;
+        position: fixed !important;
+        z-index: 1001 !important;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0) !important;
+    }
+    
+    .content {
+        margin-left: 0 !important;
+        padding: 10px !important;
+        width: 100% !important;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex !important;
+        position: fixed !important;
+        top: 20px !important;
+        left: 20px !important;
+        z-index: 1002 !important;
+        width: 44px !important;
+        height: 44px !important;
+        background-color: #109349 !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 5px !important;
+        cursor: pointer !important;
+    }
+    
+    .header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        padding-left: 60px !important;
+    }
+    
+    .header h1 {
+        font-size: 1.3rem !important;
+    }
+    
+    .dashboard-welcome {
+        padding: 15px 10px !important;
+        margin: 10px 0 !important;
+        text-align: center !important;
+    }
+    
+    .welcome-message h2 {
+        font-size: 1.2rem !important;
+        text-align: center !important;
+    }
+    
+    .welcome-message p {
+        font-size: 13px !important;
+        text-align: center !important;
+    }
+    
+    .welcome-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        align-items: center !important;
+    }
+    
+    .welcome-actions .btn {
+        width: 100% !important;
+        max-width: 280px !important;
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+        text-align: center !important;
+    }
+    
+    .card {
+        margin-bottom: 15px !important;
+        border-radius: 8px !important;
+    }
+    
+    .card-header {
+        padding: 12px !important;
+        font-size: 14px !important;
+    }
+    
+    .card-body {
+        padding: 12px !important;
+        font-size: 13px !important;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    
+    .quick-actions {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+}
+
+/* FORÇA MOBILE PEQUENO */
+@media screen and (max-width: 480px) {
+    .content {
+        padding: 5px !important;
+    }
+    
+    .sidebar {
+        width: 260px !important;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .welcome-actions .btn {
+        max-width: 240px !important;
+        padding: 10px 15px !important;
+        font-size: 13px !important;
+    }
+}
+
+/* FORÇA IPHONE 13 PRO MAX */
+@media screen and (max-width: 428px) {
+    .content {
+        padding: 8px !important;
+        margin-left: 0 !important;
+    }
+    
+    .sidebar {
+        width: 250px !important;
+    }
+    
+    .mobile-menu-toggle {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .header {
+        padding-left: 50px !important;
+    }
+    
+    .header h1 {
+        font-size: 1.1rem !important;
+    }
+    
+    .dashboard-welcome {
+        padding: 12px 8px !important;
+    }
+    
+    .welcome-message h2 {
+        font-size: 1.1rem !important;
+    }
+    
+    .welcome-message p {
+        font-size: 12px !important;
+    }
+    
+    .welcome-actions .btn {
+        max-width: 220px !important;
+        padding: 10px 15px !important;
+        font-size: 12px !important;
+    }
+    
+    .card-header,
+    .card-body {
+        padding: 10px !important;
+        font-size: 12px !important;
+    }
+}

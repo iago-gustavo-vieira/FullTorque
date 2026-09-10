@@ -1,0 +1,64 @@
+INSTRUÇÕES PARA TESTAR O SISTEMA DE BLOQUEIO DE HORÁRIOS
+=========================================================
+
+PASSO 1: Verificar estrutura do banco de dados
+-----------------------------------------------
+1. Acesse: http://localhost/phpmyadmin
+2. Selecione seu banco de dados
+3. Execute o SQL do arquivo: verificar_estrutura_agendamento.sql
+4. Verifique se os campos data_agendamento e hora_agendamento existem na tabela relatorios_cliente
+
+PASSO 2: Testar a API
+----------------------
+1. Acesse: http://localhost/FullTorque/testeQ/teste-api-debug.php
+2. Verifique se os campos existem
+3. Veja se os agendamentos estão sendo salvos
+
+PASSO 3: Testar o agendamento com console do navegador
+-------------------------------------------------------
+1. Abra: http://localhost/FullTorque/testeQ/agendamento-diagnostico.php
+2. Pressione F12 para abrir o Console do navegador
+3. Selecione o mecânico Roger
+4. Selecione a data 29/11/2025
+5. Veja no console se aparecem os logs:
+   - "Buscando horários para: [id] 2025-11-29"
+   - "Horários ocupados recebidos: [...]"
+6. Selecione o horário 11:00
+7. Clique em "Solicitar Diagnóstico Gratuito"
+8. Veja no console:
+   - "Validando: [id] 2025-11-29 11:00"
+   - "Horários ocupados: [...]"
+   - "Está ocupado? true/false"
+
+PASSO 4: Testar bloqueio
+-------------------------
+1. Faça o primeiro agendamento (Roger, 29/11/2025, 11:00)
+2. Volte para a página de agendamento
+3. Selecione novamente Roger e 29/11/2025
+4. O horário 11:00 deve aparecer RISCADO e com "✖ Ocupado"
+5. Tente clicar nele - NÃO deve ser possível selecionar
+6. Se conseguir selecionar, ao enviar deve aparecer o alerta de bloqueio
+
+PROBLEMAS COMUNS:
+-----------------
+1. Se os horários ocupados não aparecem:
+   - Verifique se os campos existem no banco (Passo 1)
+   - Verifique o console do navegador (F12)
+   - Teste a API diretamente (Passo 2)
+
+2. Se consegue agendar horários duplicados:
+   - Verifique se o JavaScript está carregando (F12 > Console)
+   - Verifique se há erros no console
+   - Teste manualmente a API: 
+     http://localhost/FullTorque/testeQ/api-horarios-ocupados.php?mecanico_id=1&data=2025-11-29
+
+3. Se a validação backend não funciona:
+   - Verifique se $_SESSION está funcionando
+   - Verifique os logs do Apache (xampp/apache/logs/error.log)
+
+ENVIE PARA MIM:
+---------------
+Se ainda não funcionar, envie:
+1. Print do console do navegador (F12)
+2. Resultado do teste-api-debug.php
+3. Resultado da API: api-horarios-ocupados.php?mecanico_id=1&data=2025-11-29

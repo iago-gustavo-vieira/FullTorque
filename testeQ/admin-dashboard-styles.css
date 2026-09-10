@@ -1,0 +1,377 @@
+/* Admin Dashboard Unified Styles - Temas Itália e Alemanha */
+
+/* Container Principal */
+.container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Page Header - Tema Itália e Alemanha */
+.page-header {
+    background: linear-gradient(135deg, #109349 0%, #109349 33%, #FFFFFF 33%, #FFFFFF 66%, #DD0101 66%, #DD0101 100%) !important;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(16, 147, 73, 0.2);
+    border: 2px solid #109349;
+}
+
+.theme-alemanha .page-header {
+    background: linear-gradient(135deg, #000000 0%, #000000 33%, #DD0100 33%, #DD0100 66%, #FFCE00 66%, #FFCE00 100%) !important;
+    border: 2px solid #FFCE00;
+}
+
+.page-header > h1,
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.page-header > p,
+.page-header p {
+    opacity: 1;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.mobile-welcome-text {
+    display: none;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+
+.theme-alemanha .card {
+    background: #000000;
+    border: 2px solid #DD0100;
+    box-shadow: 0 2px 8px rgba(255, 206, 0, 0.3);
+}
+
+.card-header {
+    background: #109349;
+    color: white;
+    padding: 20px 25px;
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-alemanha .card-header {
+    background: linear-gradient(135deg, #000000, #DD0100);
+}
+
+.card-header h2,
+.card-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.theme-alemanha .card-body {
+    background: #000000;
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.theme-alemanha table {
+    background: #000000;
+}
+
+th, td {
+    padding: 15px 18px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+.theme-alemanha th {
+    background: #1a1a1a;
+    color: #FFCE00;
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+.theme-alemanha tr:hover {
+    background: #1a1a1a;
+}
+
+.theme-alemanha td {
+    color: #ffffff;
+    border-bottom-color: #333;
+}
+
+/* Formulários */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.theme-alemanha .form-group label,
+.theme-alemanha .filter-group label {
+    color: #FFCE00;
+}
+
+.form-control,
+.filter-group select,
+.filter-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.theme-alemanha .form-control,
+.theme-alemanha .filter-group select,
+.theme-alemanha .filter-group input {
+    background: #1a1a1a;
+    border: 1px solid #DD0100;
+    color: #ffffff;
+}
+
+/* Botões */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background: #109349;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0d7a3a;
+    color: white;
+    text-decoration: none;
+}
+
+/* Status Badges */
+.status-badge,
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-ativo,
+.badge-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-inativo,
+.badge-secondary {
+    background: #f8f9fa;
+    color: #6c757d;
+}
+
+.theme-alemanha .status-ativo,
+.theme-alemanha .badge-success {
+    background: rgba(255, 206, 0, 0.2);
+    color: #FFCE00;
+}
+
+.theme-alemanha .status-inativo,
+.theme-alemanha .badge-secondary {
+    background: rgba(221, 1, 0, 0.2);
+    color: #DD0100;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    
+    .content {
+        margin-left: 0 !important;
+        padding: 70px 15px 15px !important;
+    }
+    
+    .page-header {
+        background-image: url('bem-vindo-italia-responsivo.jpg') !important;
+        background-size: 100% 180px !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        padding: 10px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        min-height: 180px;
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        text-align: right;
+        position: relative;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        background-color: transparent !important;
+    }
+    
+    .theme-alemanha .page-header {
+        background-image: url('bem-vindo-alemanha-responsivo.jpg') !important;
+        background-size: 100% 180px !important;
+        background-position: center !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .page-header > h1,
+    .page-header h1,
+    .page-header > p,
+    .page-header p {
+        display: none !important;
+    }
+    
+    .mobile-welcome-text {
+        display: flex;
+        position: absolute;
+        top: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.9);
+        color: #109349;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        z-index: 10;
+        white-space: nowrap;
+    }
+    
+    .theme-alemanha .mobile-welcome-text {
+        background: rgba(0, 0, 0, 0.8);
+        color: #EFC202;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        align-items: flex-start;
+    }
+    
+    .card-header h2,
+    .card-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+    
+    .filter-form,
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .filter-group {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .table-responsive,
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    table {
+        min-width: 800px;
+        font-size: 13px;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+        white-space: nowrap;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .actions {
+        flex-direction: row;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 15px 10px;
+    }
+    
+    .card-header h2,
+    .card-header h3 {
+        font-size: 1rem;
+    }
+    
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 8px 5px;
+    }
+    
+    .btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}

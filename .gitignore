@@ -1,0 +1,30 @@
+# Credenciais e configurações locais/remotas — NUNCA versionar
+testeQ/config.local.php
+testeQ/config.remote.php
+testeQ/config.php
+
+# Uploads reais de usuários (fotos de perfil, diagnósticos, orçamentos, etc.)
+testeQ/uploads/
+testeQ/uploadsprofile_photos/
+testeQ/components/uploads/
+
+# Dumps de banco com dados reais de usuários (nomes, e-mails, CPF, senhas)
+# Ficam versionados apenas os *.schema.sql (só estrutura, sem dados)
+testeQ/database.sql
+testeQ/auto_center.sql
+testeQ/auto_service.sql
+testeQ/database_promocoes_completo.sql
+autocenter.sql
+autoservice.sql
+
+# Logs
+*.log
+logs/
+
+# Ambiente / segredos
+.env
+.env.*
+
+# Sistema
+.DS_Store
+Thumbs.db

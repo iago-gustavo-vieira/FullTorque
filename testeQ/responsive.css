@@ -1,0 +1,806 @@
+/* ===== RESPONSIVE CSS - FULLTORQUE =====
+   Arquivo responsivo para todas as páginas do site
+   Compatível com diversos tamanhos de celular
+   ========================================== */
+
+/* ===== BREAKPOINTS =====
+   - Mobile Small: 320px - 480px
+   - Mobile Medium: 481px - 768px
+   - Tablet: 769px - 1024px
+   ======================= */
+
+/* ===== RESET E BASE ===== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== CONTAINER RESPONSIVO ===== */
+.container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== TABLETS E MOBILE LANDSCAPE ===== */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    /* Header ajustes */
+    .header-content {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .logo img {
+        height: 35px;
+    }
+    
+    .nav-menu {
+        font-size: 14px;
+    }
+    
+    .nav-menu li {
+        margin-left: 15px;
+    }
+}
+
+/* ===== MOBILE MEDIUM (481px - 768px) ===== */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* ===== SIDEBAR MOBILE ===== */
+    .sidebar {
+        transform: translateX(-100%);
+        width: 280px;
+        position: fixed;
+        z-index: 1001;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .content {
+        margin-left: 0;
+        padding: 15px;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
+    
+    .mobile-menu-toggle.active {
+        left: 300px;
+    }
+    
+    /* ===== HEADER MOBILE ===== */
+    .header {
+        padding: 10px 0;
+        position: relative;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .header-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 280px;
+        height: calc(100vh - 70px);
+        background: linear-gradient(135deg, #009246 0%, #009246 33%, #ffffff 33%, #ffffff 66%, #CE2B37 66%, #CE2B37 100%);
+        flex-direction: column;
+        padding: 20px;
+        transition: right 0.3s ease;
+        z-index: 999;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+    }
+    
+    .theme-alemanha .nav-menu {
+        background: linear-gradient(135deg, #000000 0%, #000000 33%, #DD0100 33%, #DD0100 66%, #FFCE00 66%, #FFCE00 100%);
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu li {
+        margin: 15px 0;
+    }
+    
+    .nav-menu a {
+        padding: 15px;
+        border-radius: 8px;
+        transition: all 0.3s;
+        display: block;
+    }
+    
+    .nav-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .mobile-menu-btn {
+        display: block !important;
+    }
+    
+    /* ===== HERO SECTION MOBILE ===== */
+    .hero {
+        padding: 80px 0 40px;
+        text-align: center;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+    
+    /* ===== CARDS E GRIDS MOBILE ===== */
+    .services-grid,
+    .testimonial-grid,
+    .differentials-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .service-card,
+    .testimonial-card,
+    .differential-card,
+    .stat-card {
+        margin-bottom: 20px;
+    }
+    
+    .service-card {
+        border-radius: 8px;
+    }
+    
+    .service-content {
+        padding: 20px 15px;
+    }
+    
+    .service-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .service-content p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .service-features {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .feature {
+        font-size: 0.75rem;
+        padding: 3px 6px;
+    }
+    
+    /* ===== ABOUT SECTION MOBILE ===== */
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .about-text h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .feature-list li {
+        margin-bottom: 12px;
+        font-size: 14px;
+    }
+    
+    /* ===== PROMOÇÕES CAROUSEL MOBILE ===== */
+    .promocoes-carousel {
+        height: 400px;
+        border-radius: 15px;
+    }
+    
+    .promo-slide-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
+        min-height: 400px;
+        justify-content: center;
+    }
+    
+    .promo-slide-content {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .promo-slide-title {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+    
+    .promo-slide-desc {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .discount-badge {
+        font-size: 1.4rem;
+        padding: 8px 16px;
+        margin-bottom: 10px;
+        display: block;
+        text-align: center;
+    }
+    
+    .cupom-code {
+        font-size: 1.1rem;
+        padding: 8px 15px;
+        display: block;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    .promo-slide-validity {
+        position: static;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .promo-slide-image {
+        width: 100%;
+        height: 100px;
+        margin-top: 15px;
+    }
+    
+    .promo-slide-image i {
+        font-size: 2.5rem;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .carousel-prev {
+        left: 10px;
+    }
+    
+    .carousel-next {
+        right: 10px;
+    }
+    
+    /* ===== STATS SECTION MOBILE ===== */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 20px 15px;
+    }
+    
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+    }
+    
+    /* ===== FORMS MOBILE ===== */
+    .form-row {
+        flex-direction: column;
+        margin: 0;
+    }
+    
+    .form-group {
+        flex: 1 0 100%;
+        margin: 0 0 20px 0;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 15px;
+        font-size: 16px; /* Evita zoom no iOS */
+    }
+    
+    /* ===== FOOTER MOBILE ===== */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .footer-column h3 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    .contact-info li {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    /* ===== CTA SECTION MOBILE ===== */
+    .cta h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .cta p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .cta-benefits {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .benefit {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+    
+    /* ===== FAQ MOBILE ===== */
+    .faq-question h3 {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+    
+    .faq-answer {
+        font-size: 14px;
+    }
+    
+    /* ===== DASHBOARD MOBILE ===== */
+    .dashboard-welcome {
+        padding: 20px 15px;
+        text-align: center;
+    }
+    
+    .welcome-message h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .welcome-message p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .welcome-actions {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .welcome-actions .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+    
+    .card {
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+    
+    .card-header {
+        padding: 15px;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+}
+
+/* ===== MOBILE SMALL (320px - 480px) ===== */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    /* ===== SIDEBAR EXTRA SMALL ===== */
+    .sidebar {
+        width: 260px;
+    }
+    
+    .mobile-menu-toggle.active {
+        left: 280px;
+    }
+    
+    /* ===== HEADER EXTRA SMALL ===== */
+    .header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .logo img {
+        height: 30px;
+    }
+    
+    .nav-menu {
+        width: 260px;
+    }
+    
+    /* ===== HERO EXTRA SMALL ===== */
+    .hero {
+        padding: 60px 0 30px;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+        line-height: 1.1;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+    }
+    
+    .hero-buttons .btn {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    /* ===== CARDS EXTRA SMALL ===== */
+    .service-content {
+        padding: 15px 10px;
+    }
+    
+    .service-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .service-content p {
+        font-size: 13px;
+    }
+    
+    .service-price {
+        font-size: 1.1rem;
+    }
+    
+    /* ===== PROMOÇÕES EXTRA SMALL ===== */
+    .promocoes-carousel {
+        height: 350px;
+    }
+    
+    .promo-slide-card {
+        padding: 15px 10px;
+        min-height: 350px;
+    }
+    
+    .promo-slide-title {
+        font-size: 1.5rem;
+    }
+    
+    .promo-slide-desc {
+        font-size: 0.9rem;
+    }
+    
+    .discount-badge {
+        font-size: 1.2rem;
+        padding: 6px 12px;
+    }
+    
+    .cupom-code {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+    
+    .btn-promo {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    /* ===== STATS EXTRA SMALL ===== */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 15px 10px;
+    }
+    
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    /* ===== ABOUT EXTRA SMALL ===== */
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .feature-list li {
+        font-size: 13px;
+    }
+    
+    /* ===== FORMS EXTRA SMALL ===== */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 16px;
+    }
+    
+    .btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    /* ===== FOOTER EXTRA SMALL ===== */
+    .footer {
+        padding: 40px 0 15px;
+    }
+    
+    .footer-column h3 {
+        font-size: 1rem;
+    }
+    
+    .footer-links li,
+    .contact-info li {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+    
+    /* ===== CTA EXTRA SMALL ===== */
+    .cta h3 {
+        font-size: 1.8rem;
+    }
+    
+    .cta p {
+        font-size: 0.9rem;
+    }
+    
+    .benefit {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
+    /* ===== DASHBOARD EXTRA SMALL ===== */
+    .dashboard-welcome {
+        padding: 15px 10px;
+    }
+    
+    .welcome-message h2 {
+        font-size: 1.3rem;
+    }
+    
+    .welcome-message p {
+        font-size: 13px;
+    }
+    
+    .welcome-actions .btn {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    .card-header,
+    .card-body {
+        padding: 12px;
+    }
+}
+
+/* ===== LANDSCAPE MOBILE ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 40px 0 20px;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .promocoes-carousel {
+        height: 300px;
+    }
+    
+    .promo-slide-card {
+        min-height: 300px;
+        padding: 15px;
+    }
+    
+    .sidebar {
+        height: 100vh;
+        overflow-y: auto;
+    }
+}
+
+/* ===== UTILITIES RESPONSIVAS ===== */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+    
+    .show-mobile {
+        display: block !important;
+    }
+    
+    .text-center-mobile {
+        text-align: center !important;
+    }
+    
+    .full-width-mobile {
+        width: 100% !important;
+    }
+    
+    .no-padding-mobile {
+        padding: 0 !important;
+    }
+    
+    .small-text-mobile {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ===== TOUCH IMPROVEMENTS ===== */
+@media (hover: none) and (pointer: coarse) {
+    .btn,
+    .menu-item,
+    .nav-menu a,
+    .carousel-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .btn {
+        padding: 15px 20px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        min-height: 44px;
+    }
+}
+
+/* ===== ACESSIBILIDADE ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== DARK MODE MOBILE ===== */
+@media (max-width: 768px) {
+    .theme-alemanha .sidebar {
+        background-color: #000000;
+    }
+    
+    .theme-alemanha .nav-menu {
+        background: linear-gradient(135deg, #000000 0%, #000000 33%, #DD0100 33%, #DD0100 66%, #FFCE00 66%, #FFCE00 100%);
+    }
+    
+    .theme-alemanha .header h1 {
+        color: white;
+    }
+    
+    .theme-alemanha .service-card,
+    .theme-alemanha .testimonial-card,
+    .theme-alemanha .differential-card {
+        background-color: #000000;
+        color: white;
+        box-shadow: 0 8px 25px rgba(255, 206, 0, 0.3);
+    }
+    
+    .theme-alemanha .form-group input:focus {
+        border-color: #FFCE00;
+        box-shadow: 0 0 0 2px rgba(255, 206, 0, 0.2);
+    }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+@media (max-width: 768px) {
+    .promo-slide-card {
+        will-change: transform;
+    }
+    
+    .carousel-track {
+        will-change: transform;
+    }
+    
+    .sidebar {
+        will-change: transform;
+    }
+    
+    .nav-menu {
+        will-change: right;
+    }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE usuarios ADD COLUMN token_recuperacao VARCHAR(4) DEFAULT NULL;

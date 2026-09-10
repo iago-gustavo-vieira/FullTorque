@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste Templates</title>
+</head>
+<body>
+    <button onclick="enviarTemplate('desconto')">Desconto</button>
+    <button onclick="enviarTemplate('fidelidade')">Fidelidade</button>
+    <button onclick="enviarTemplate('urgencia')">Urgência</button>
+    <button onclick="enviarVeiculoPronto()">Veículo Pronto</button>
+    
+    <script>
+    function enviarTemplate(tipo) {
+        const templates = {
+            'desconto': '🎉 OFERTA ESPECIAL! 🎉\n\nAproveite nosso desconto imperdível! Venha cuidar do seu veículo com a qualidade que você merece.\n\n🚗 Agende já seu horário!',
+            'fidelidade': '⭐ CLIENTE VIP ⭐\n\nVocê é especial para nós! Como cliente fiel, preparamos uma oferta exclusiva só para você.\n\n🏆 Obrigado pela confiança!',
+            'urgencia': '⏰ Últimas horas! ⏰\n\nEsta oferta termina em breve! Não perca a oportunidade de economizar no cuidado do seu veículo.\n\n🏃♂️ Corra e agende agora!'
+        };
+        
+        const titulos = {
+            'desconto': 'Oferta Especial',
+            'fidelidade': 'Cliente VIP',
+            'urgencia': 'Promoção Relâmpago'
+        };
+        
+        alert(`Enviando: ${titulos[tipo]}\n\n${templates[tipo]}`);
+    }
+    
+    function enviarVeiculoPronto() {
+        alert('Enviando notificação de veículo pronto para todos os clientes!');
+    }
+    </script>
+</body>
+</html>

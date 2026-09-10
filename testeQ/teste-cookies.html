@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - Banner de Cookies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #DD0101;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #DD0101;
+        }
+        
+        .info-box h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .info-box p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .btn-primary {
+            background: #DD0101;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #a01e28;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+        
+        .status {
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+        
+        .status.accepted {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.rejected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .status.pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍪 Teste do Banner de Cookies</h1>
+        
+        <div class="info-box">
+            <h3>📋 Instruções de Teste</h3>
+            <p>
+                1. Ao carregar esta página, o banner de cookies deve aparecer na parte inferior<br>
+                2. O banner NÃO deve desaparecer automaticamente<br>
+                3. Clique em "Aceitar" ou "Recusar" para testar<br>
+                4. Recarregue a página - o banner NÃO deve aparecer novamente<br>
+                5. Use o botão "Limpar Cookies" para testar novamente
+            </p>
+        </div>
+        
+        <div id="cookieStatus" class="status pending">
+            ⏳ Aguardando resposta do usuário...
+        </div>
+        
+        <div class="btn-group">
+            <button class="btn btn-secondary" onclick="clearCookies()">
+                🗑️ Limpar Cookies
+            </button>
+            <button class="btn btn-primary" onclick="checkStatus()">
+                🔄 Verificar Status
+            </button>
+        </div>
+        
+        <div class="info-box" style="margin-top: 30px;">
+            <h3>✅ Checklist de Verificação</h3>
+            <p>
+                ☐ Banner aparece ao carregar a página<br>
+                ☐ Banner permanece visível até clicar em um botão<br>
+                ☐ Ao aceitar, banner desaparece e mostra toast de sucesso<br>
+                ☐ Ao recusar, banner desaparece e mostra toast informativo<br>
+                ☐ Após recarregar, banner NÃO aparece novamente<br>
+                ☐ Após limpar cookies, banner volta a aparecer<br>
+                ☐ Design responsivo funciona em mobile<br>
+                ☐ Animações funcionam corretamente
+            </p>
+        </div>
+    </div>
+    
+    <!-- Banner de Cookies -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-icon">🍪</div>
+            <div class="cookie-banner-text">
+                <p><strong>Este site utiliza cookies</strong> para melhorar sua experiência e analisar nosso tráfego. Ao continuar navegando, você concorda com nossa <a href="politica-privacidade.php" target="_blank">Política de Privacidade</a> conforme LGPD.</p>
+            </div>
+            <div class="cookie-banner-actions">
+                <button class="cookie-btn-reject" onclick="rejectCookies()">Recusar</button>
+                <button class="cookie-btn-accept" onclick="acceptCookies()">Aceitar</button>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+    /* Banner de Cookies */
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #DD0101 0%, #a01e28 100%);
+        color: white;
+        padding: 20px;
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+        z-index: 10000;
+        transform: translateY(100%);
+        transition: transform 0.4s ease;
+        display: none;
+    }
+
+    .cookie-banner.show {
+        transform: translateY(0);
+        display: block;
+    }
+
+    .cookie-banner-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .cookie-banner-icon {
+        font-size: 2.5rem;
+        flex-shrink: 0;
+    }
+
+    .cookie-banner-text {
+        flex: 1;
+    }
+
+    .cookie-banner-text p {
+        margin: 0;
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+    .cookie-banner-text a {
+        color: white;
+        text-decoration: underline;
+        font-weight: 600;
+    }
+
+    .cookie-banner-actions {
+        display: flex;
+        gap: 10px;
+        flex-shrink: 0;
+    }
+
+    .cookie-btn-accept,
+    .cookie-btn-reject {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .cookie-btn-accept {
+        background: white;
+        color: #DD0101;
+    }
+
+    .cookie-btn-accept:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .cookie-btn-reject {
+        background: rgba(255,255,255,0.2);
+        color: white;
+        border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    .cookie-btn-reject:hover {
+        background: rgba(255,255,255,0.3);
+    }
+
+    @media (max-width: 768px) {
+        .cookie-banner {
+            padding: 15px;
+        }
+        
+        .cookie-banner-content {
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+        }
+        
+        .cookie-banner-icon {
+            font-size: 2rem;
+        }
+        
+        .cookie-banner-text p {
+            font-size: 13px;
+        }
+        
+        .cookie-banner-actions {
+            width: 100%;
+            flex-direction: column;
+        }
+        
+        .cookie-btn-accept,
+        .cookie-btn-reject {
+            width: 100%;
+        }
+    }
+    </style>
+    
+    <!-- Script de Gerenciamento de Cookies -->
+    <script src="cookie-consent.js"></script>
+    
+    <script>
+        // Funções de teste
+        function clearCookies() {
+            document.cookie = "fulltorque_cookies_consent=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            alert('✅ Cookies limpos! Recarregue a página para ver o banner novamente.');
+            location.reload();
+        }
+        
+        function checkStatus() {
+            const consent = getCookie('fulltorque_cookies_consent');
+            const statusDiv = document.getElementById('cookieStatus');
+            
+            if (!consent) {
+                statusDiv.className = 'status pending';
+                statusDiv.innerHTML = '⏳ Aguardando resposta do usuário...';
+            } else if (consent === 'accepted') {
+                statusDiv.className = 'status accepted';
+                statusDiv.innerHTML = '✅ Cookies ACEITOS pelo usuário';
+            } else if (consent === 'rejected') {
+                statusDiv.className = 'status rejected';
+                statusDiv.innerHTML = '❌ Cookies RECUSADOS pelo usuário';
+            }
+        }
+        
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+        
+        // Verificar status ao carregar
+        window.addEventListener('load', checkStatus);
+        
+        // Atualizar status quando o cookie mudar
+        setInterval(checkStatus, 1000);
+    </script>
+</body>
+</html>

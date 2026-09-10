@@ -1,0 +1,226 @@
+/* CSS Global para dashboard-welcome - Aplicar em todas as páginas */
+/* FORÇA O ESTILO ESTÁTICO DO INDEX.PHP EM TODAS AS PÁGINAS */
+
+/* Estilo padrão (tema Itália) - SEM ANIMAÇÃO - IGUAL AO INDEX.PHP - APENAS DESKTOP */
+@media (min-width: 769px) {
+    .dashboard-welcome {
+        background: transparent !important;
+    }
+}
+
+/* Remover TODOS os pseudo-elementos */
+.dashboard-welcome::before,
+.dashboard-welcome::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Remover qualquer animação ou efeito de TODOS os elementos filhos */
+.dashboard-welcome *,
+.dashboard-welcome *::before,
+.dashboard-welcome *::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    background-attachment: scroll !important;
+}
+
+/* Tema Alemanha - SEM ANIMAÇÃO - IGUAL AO INDEX.PHP - APENAS DESKTOP */
+@media (min-width: 769px) {
+    .theme-alemanha .dashboard-welcome {
+        background: transparent !important;
+    }
+}
+
+/* Remover TODOS os pseudo-elementos do tema alemanha */
+.theme-alemanha .dashboard-welcome::before,
+.theme-alemanha .dashboard-welcome::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Remover animações de todos os elementos filhos no tema alemanha */
+.theme-alemanha .dashboard-welcome *,
+.theme-alemanha .dashboard-welcome *::before,
+.theme-alemanha .dashboard-welcome *::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    background-attachment: scroll !important;
+}
+
+/* SOBRESCREVER ANIMAÇÕES ESPECÍFICAS */
+@keyframes gradientShift {
+    0%, 50%, 100% { 
+        background-position: 0% 50% !important;
+        transform: none !important;
+    }
+}
+
+/* Forçar remoção de animações por nome */
+.dashboard-welcome[style*="animation"],
+.dashboard-welcome[class*="animate"],
+.dashboard-welcome[class*="gradient"] {
+    animation: none !important;
+    background-size: auto !important;
+    background-position: initial !important;
+}
+
+/* Estilos para elementos internos */
+.welcome-message h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.welcome-message h2 span {
+    display: inline;
+}
+
+.welcome-message h2 .text-white {
+    color: #ffffff !important;
+}
+
+.welcome-message h2 .text-green {
+    color: #109349 !important;
+}
+
+.theme-alemanha .welcome-message h2 .text-white {
+    color: #ffffff !important;
+}
+
+.theme-alemanha .welcome-message h2 .text-green {
+    color: #000000 !important;
+}
+
+.welcome-message p {
+    opacity: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+    color: #fff;
+}
+
+.welcome-actions .btn {
+    background-color: #109349;
+    color: #fff;
+    border: none;
+}
+
+.theme-alemanha .welcome-actions .btn {
+    color: #fff;
+    background-color: #000000;
+}
+
+.welcome-actions .btn:hover {
+    background-color: #007f3790;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.theme-alemanha .welcome-actions .btn:hover {
+    background-color: #00000074;
+}
+
+/* Texto de boas-vindas responsivo */
+.dashboard-welcome-text {
+    display: none;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.dashboard-welcome-text h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 auto;
+    padding: 8px 12px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #109349;
+    text-shadow: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    display: inline-block;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Tema Alemanha - texto amarelo */
+.theme-alemanha .dashboard-welcome-text h3 {
+    color: #EFC202;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsividade mobile - MANTÉM IMAGEM COMO ESTAVA ANTES */
+@media (max-width: 768px) {
+    .dashboard-welcome-text {
+        display: block !important;
+    }
+    .dashboard-welcome {
+        background: url('bandeira_italia.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        justify-content: flex-end !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center !important;
+        padding: 20px !important;
+    }
+    
+    .dashboard-welcome .welcome-message {
+        text-align: right !important;
+        margin-left: auto !important;
+        max-width: 60% !important;
+        padding-right: 10px !important;
+    }
+    
+    .dashboard-welcome .welcome-actions {
+        text-align: center !important;
+        margin-left: auto !important;
+        max-width: 60% !important;
+        padding-right: 10px !important;
+        margin-top: 15px !important;
+    }
+    
+    .dashboard-welcome .welcome-message h2 {
+        margin-right: 10px !important;
+    }
+    
+    .theme-alemanha .dashboard-welcome {
+        background: url('fundo_alemanha.jpg') !important;
+        background-size: cover !important;
+        background-position: left center !important;
+        background-repeat: no-repeat !important;
+        justify-content: flex-end !important;
+    }
+    
+    .theme-alemanha .dashboard-welcome .welcome-message {
+        text-align: right !important;
+        margin-left: auto !important;
+        max-width: 60% !important;
+        padding-right: 10px !important;
+    }
+    
+    .theme-alemanha .dashboard-welcome .welcome-actions {
+        text-align: center !important;
+        margin-left: auto !important;
+        max-width: 60% !important;
+        padding-right: 10px !important;
+        margin-top: 15px !important;
+    }
+    
+    .theme-alemanha .dashboard-welcome .welcome-message h2 {
+        margin-right: 10px !important;
+        color: #EFC202 !important;
+    }
+    
+    .theme-alemanha .dashboard-welcome .welcome-message p {
+        color: #EFC202 !important;
+    }
+    
+    .welcome-actions .btn {
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+    }
+}

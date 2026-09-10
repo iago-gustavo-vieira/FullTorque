@@ -1,0 +1,237 @@
+/* CSS FORÇADO PARA REMOVER TODAS AS ANIMAÇÕES DOS DASHBOARD-WELCOME */
+/* PRIORIDADE MÁXIMA - SOBRESCREVE QUALQUER OUTRO CSS */
+
+/* FORÇA ESTILO ESTÁTICO PARA TODOS OS DASHBOARD-WELCOME - APENAS DESKTOP */
+@media (min-width: 769px) {
+    .dashboard-welcome,
+    div.dashboard-welcome,
+    section.dashboard-welcome,
+    header.dashboard-welcome {
+        background: linear-gradient(135deg, #109349 0%, #109349 33%, #FFFFFF 33%, #FFFFFF 66%, #DD0101 66%, #DD0101 100%) !important;
+        color: white !important;
+        border: 2px solid #109349 !important;
+        border-radius: 20px !important;
+        padding: 30px !important;
+        margin-bottom: 30px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+        position: static !important;
+        overflow: visible !important;
+        background-size: auto !important;
+        background-position: initial !important;
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
+        
+        /* FORÇAR REMOÇÃO DE ANIMAÇÕES */
+        animation: none !important;
+        animation-name: none !important;
+        animation-duration: 0s !important;
+        animation-timing-function: none !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 0 !important;
+        animation-direction: normal !important;
+        animation-fill-mode: none !important;
+        animation-play-state: paused !important;
+        
+        /* FORÇAR REMOÇÃO DE TRANSIÇÕES */
+        transition: none !important;
+        transition-property: none !important;
+        transition-duration: 0s !important;
+        transition-timing-function: none !important;
+        transition-delay: 0s !important;
+        
+        /* FORÇAR REMOÇÃO DE TRANSFORMAÇÕES */
+        transform: none !important;
+        transform-origin: initial !important;
+        transform-style: flat !important;
+    }
+}
+
+/* TEMA ALEMANHA - FORÇADO - APENAS DESKTOP */
+@media (min-width: 769px) {
+    .theme-alemanha .dashboard-welcome,
+    .theme-alemanha div.dashboard-welcome,
+    .theme-alemanha section.dashboard-welcome,
+    .theme-alemanha header.dashboard-welcome {
+        background: linear-gradient(135deg, #000000 0%, #000000 33%, #DD0100 33%, #DD0100 66%, #FFCE00 66%, #FFCE00 100%) !important;
+        color: white !important;
+        border: 2px solid #FFCE00 !important;
+        
+        /* FORÇAR REMOÇÃO DE ANIMAÇÕES */
+        animation: none !important;
+        animation-name: none !important;
+        animation-duration: 0s !important;
+        animation-timing-function: none !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 0 !important;
+        animation-direction: normal !important;
+        animation-fill-mode: none !important;
+        animation-play-state: paused !important;
+        
+        /* FORÇAR REMOÇÃO DE TRANSIÇÕES */
+        transition: none !important;
+        transition-property: none !important;
+        transition-duration: 0s !important;
+        transition-timing-function: none !important;
+        transition-delay: 0s !important;
+        
+        /* FORÇAR REMOÇÃO DE TRANSFORMAÇÕES */
+        transform: none !important;
+        transform-origin: initial !important;
+        transform-style: flat !important;
+    }
+}
+
+/* REMOVER TODOS OS PSEUDO-ELEMENTOS */
+.dashboard-welcome::before,
+.dashboard-welcome::after,
+div.dashboard-welcome::before,
+div.dashboard-welcome::after,
+section.dashboard-welcome::before,
+section.dashboard-welcome::after,
+header.dashboard-welcome::before,
+header.dashboard-welcome::after {
+    display: none !important;
+    content: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* TEMA ALEMANHA - REMOVER PSEUDO-ELEMENTOS */
+.theme-alemanha .dashboard-welcome::before,
+.theme-alemanha .dashboard-welcome::after,
+.theme-alemanha div.dashboard-welcome::before,
+.theme-alemanha div.dashboard-welcome::after,
+.theme-alemanha section.dashboard-welcome::before,
+.theme-alemanha section.dashboard-welcome::after,
+.theme-alemanha header.dashboard-welcome::before,
+.theme-alemanha header.dashboard-welcome::after {
+    display: none !important;
+    content: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* FORÇAR REMOÇÃO DE ANIMAÇÕES EM TODOS OS ELEMENTOS FILHOS */
+.dashboard-welcome *,
+.dashboard-welcome *::before,
+.dashboard-welcome *::after,
+div.dashboard-welcome *,
+div.dashboard-welcome *::before,
+div.dashboard-welcome *::after {
+    animation: none !important;
+    animation-name: none !important;
+    animation-duration: 0s !important;
+    transition: none !important;
+    transition-property: none !important;
+    transition-duration: 0s !important;
+    transform: none !important;
+    background-attachment: scroll !important;
+}
+
+/* TEMA ALEMANHA - FORÇAR REMOÇÃO DE ANIMAÇÕES EM ELEMENTOS FILHOS */
+.theme-alemanha .dashboard-welcome *,
+.theme-alemanha .dashboard-welcome *::before,
+.theme-alemanha .dashboard-welcome *::after,
+.theme-alemanha div.dashboard-welcome *,
+.theme-alemanha div.dashboard-welcome *::before,
+.theme-alemanha div.dashboard-welcome *::after {
+    animation: none !important;
+    animation-name: none !important;
+    animation-duration: 0s !important;
+    transition: none !important;
+    transition-property: none !important;
+    transition-duration: 0s !important;
+    transform: none !important;
+    background-attachment: scroll !important;
+}
+
+/* SOBRESCREVER KEYFRAMES ESPECÍFICOS */
+@keyframes gradientShift {
+    0%, 50%, 100% { 
+        background-position: 0% 50% !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
+
+@keyframes gradient-shift {
+    0%, 50%, 100% { 
+        background-position: 0% 50% !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
+
+@keyframes fadeIn {
+    0%, 100% { 
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+@keyframes slideIn {
+    0%, 100% { 
+        transform: none !important;
+    }
+}
+
+/* FORÇAR ELEMENTOS COM CLASSES DE ANIMAÇÃO */
+.dashboard-welcome.animate-ready,
+.dashboard-welcome.animate-in,
+.dashboard-welcome.gradient-shift,
+.dashboard-welcome[class*="animate"],
+.dashboard-welcome[class*="gradient"] {
+    animation: none !important;
+    background-size: auto !important;
+    background-position: initial !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+/* FORÇAR ELEMENTOS COM ESTILOS INLINE */
+.dashboard-welcome[style*="animation"],
+.dashboard-welcome[style*="background-size"],
+.dashboard-welcome[style*="background-position"],
+.dashboard-welcome[style*="transform"] {
+    animation: none !important;
+    background-size: auto !important;
+    background-position: initial !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+/* RESPONSIVIDADE MOBILE - MANTÉM IMAGEM COMO ESTAVA ANTES */
+@media (max-width: 768px) {
+    .dashboard-welcome {
+        background: url('bandeira_italia.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        justify-content: flex-end !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center !important;
+        padding: 20px !important;
+        animation: none !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    .theme-alemanha .dashboard-welcome {
+        background: url('fundo_alemanha.jpg') !important;
+        background-size: cover !important;
+        background-position: left center !important;
+        background-repeat: no-repeat !important;
+        justify-content: flex-end !important;
+        animation: none !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
